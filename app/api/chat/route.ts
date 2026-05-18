@@ -7,7 +7,7 @@ export async function POST(request: Request) {
     const { messages }: { messages: UIMessage[] } = await request.json();
 
     const result = streamText({
-      model: process.env.AI_MODEL ?? "openai/gpt-5-mini",
+      model: process.env.AI_MODEL ?? "openai/gpt-5.4-mini",
       messages: await convertToModelMessages(messages),
       system:
         "You are a concise, helpful assistant. Use clear markdown when it improves readability.",
